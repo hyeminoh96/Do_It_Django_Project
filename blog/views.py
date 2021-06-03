@@ -11,3 +11,14 @@ def index(request):
             'posts': posts, # render 함수 안에 posts를 딕셔너리 형태로 추가
         }
     )
+
+def single_post_page(request, pk):
+    post = Post.objects.get(pk=pk) # pk를 매개변수로 받아 일치하는 pk의 Post 레코드를 호출
+
+    return render(
+        request,
+        'blog/single_post_page.html', # post 한 개를 sing~.html에 렌더링
+        {
+            'post' : post,
+        }
+    )
