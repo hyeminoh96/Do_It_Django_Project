@@ -19,4 +19,5 @@ from django.urls import include, path
 urlpatterns = [
     path('blog/', include('blog.urls')),
     path('admin/', admin.site.urls),
+    path('', include('single_pages.urls')) # 도메인 뒤에 아무것도 없는 경우, single_pages앱에서 처리
 ]
