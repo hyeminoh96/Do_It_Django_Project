@@ -1,3 +1,6 @@
+# django secret-key의 githu 상 노출로 인한 ignore
+settings.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
