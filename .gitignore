@@ -8,6 +8,7 @@ __pycache__/
 
 # Pycharm
 .idea/
+migrations/
 
 # C extensions
 *.so
