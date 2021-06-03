@@ -1,5 +1,5 @@
 # django secret-key의 githu 상 노출로 인한 ignore
-settings.py
+do_it_django_prj/settings.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
