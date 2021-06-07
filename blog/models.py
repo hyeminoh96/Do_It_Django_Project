@@ -16,4 +16,4 @@ class Post(models.Model):
         return f'[{self.pk}]{self.title}' # pk field에 포스트의 제목과 번호를 문자열로 표현
 
     def get_absolute_url(self): # 모델의 레코드별 url 생성 규칙
-        return f'blog/{self.pk}/' # blog 뒤에 post의 pk를 붙임
+        return f'/blog/{self.pk}/' # blog 뒤에 post의 pk를 붙임
