@@ -54,7 +54,7 @@ class TestView(TestCase):
         self.assertEqual(response.status_code, 200)
         # 3.3 메인 영역에 포스트 2개의 타이틀이 존재
         # 포스트 2개가 잘 생성되었는지 확인
-        main_are = soup.find('div', id='main-area')
+        main_area = soup.find('div', id='main-area')
         self.assertIn(post_001.title, main_area.text)
         self.assertIn(post_002.title, main_area.text)
         # 3.4 '아직 게시물이 없습니다.'문구 삭제됨
