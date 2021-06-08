@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Post(models.Model):
     title = models.CharField(max_length=30)
@@ -10,10 +11,12 @@ class Post(models.Model):
     file_upload = models.FileField(upload_to='blog/files/%Y/%M/%d/', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    # author : 추후 작성 예정
+
+    # author 필드 추가
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'[{self.pk}]{self.title}' # pk field에 포스트의 제목과 번호를 문자열로 표현
+        return f'[{self.pk}]{self.title} :: {self.author}' # pk field에 포스트의 제목과 번호를 문자열로 표현
 
     def get_absolute_url(self): # 모델의 레코드별 url 생성 규칙
         return f'/blog/{self.pk}/' # blog 뒤에 post의 pk를 붙임
