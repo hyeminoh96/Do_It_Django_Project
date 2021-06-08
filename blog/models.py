@@ -13,7 +13,7 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     # author 필드 추가
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, null=True, on_delete=models.SET_NULL) # 작성자가 db에서 삭제되어도 포스트를 삭제하지 않고 작성자명을 빈칸으로 둠
 
     def __str__(self):
         return f'[{self.pk}]{self.title} :: {self.author}' # pk field에 포스트의 제목과 번호를 문자열로 표현
